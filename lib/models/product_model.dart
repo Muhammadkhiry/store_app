@@ -30,7 +30,7 @@ class ProductModel {
       title: json["title"],
       price: (json["price"] as num).toDouble(),
       description: json["description"],
-      image: (json["images"] as List).isNotEmpty ? json["images"][0] : "",
+      image: json["thumbnail"],
       category: json["category"],
       stock: json["stock"],
       brand: json["brand"],
