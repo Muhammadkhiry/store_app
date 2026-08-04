@@ -10,7 +10,7 @@ class GetAllProducts {
       final response = await dio.get("https://dummyjson.com/products");
       final List<dynamic> responseData = response.data["products"];
       List<ProductModel> products = responseData
-          .map((e) => ProductModel.fromJson(e))
+          .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))
           .toList();
       return products;
     } on DioException catch (e) {
