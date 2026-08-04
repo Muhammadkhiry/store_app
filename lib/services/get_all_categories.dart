@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 
 class GetAllCategories {
-  final Dio dio = Dio();
+  final Dio dio;
+
+  GetAllCategories({required this.dio});
 
   Future<List<String>> getAllCategories() async {
     try {

@@ -2,7 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:store_app/models/product_model.dart';
 
 class GetAllProducts {
-  final dio = Dio();
+  final Dio dio;
+
+  GetAllProducts({required this.dio});
   Future<List<ProductModel>> getAllProducts() async {
     try {
       final response = await dio.get("https://dummyjson.com/products");
