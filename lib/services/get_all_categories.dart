@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:store_app/const.dart';
 
 class GetAllCategories {
   final Dio dio;
@@ -8,7 +9,7 @@ class GetAllCategories {
   Future<List<String>> getAllCategories() async {
     try {
       final response = await dio.get(
-        "https://dummyjson.com/products/category-list",
+        "$baseUrl/products/category-list",
       );
 
       return List<String>.from(response.data);

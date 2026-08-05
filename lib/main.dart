@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:store_app/views/home_view.dart';
 
 void main() {
   runApp(const StoreApp());
@@ -10,8 +11,9 @@ class StoreApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Store App',
       debugShowCheckedModeBanner: false,
+      home: HomeView(),
     );
   }
 }

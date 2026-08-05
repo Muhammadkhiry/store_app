@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:store_app/const.dart';
 import 'package:store_app/models/product_model.dart';
 
 class GetAllProducts {
@@ -7,7 +8,7 @@ class GetAllProducts {
   GetAllProducts({required this.dio});
   Future<List<ProductModel>> getAllProducts() async {
     try {
-      final response = await dio.get("https://dummyjson.com/products");
+      final response = await dio.get("$baseUrl/products");
       final List<dynamic> responseData = response.data["products"];
       List<ProductModel> products = responseData
           .map((e) => ProductModel.fromJson(e as Map<String, dynamic>))

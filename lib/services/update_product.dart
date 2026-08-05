@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:store_app/const.dart';
 import 'package:store_app/models/product_model.dart';
 
 class UpdateProduct {
@@ -9,7 +10,7 @@ class UpdateProduct {
   Future<ProductModel> updateProduct({required ProductModel product}) async {
     try {
       final response = await dio.put(
-        "https://dummyjson.com/products/${product.id}",
+        "$baseUrl/products/${product.id}",
         data: {
           "title": product.title,
           "price": product.price,

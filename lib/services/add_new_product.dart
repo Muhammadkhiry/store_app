@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:store_app/const.dart';
 import 'package:store_app/models/product_model.dart';
 
 class AddNewProduct {
@@ -8,14 +9,14 @@ class AddNewProduct {
 
   Future<ProductModel> addNewProduct({
     required String title,
-    required double price,
+    required String price,
     required String description,
     required String image,
     required String category,
   }) async {
     try {
       final response = await dio.post(
-        "https://dummyjson.com/products/add",
+        "$baseUrl/products/add",
         data: {
           "title": title,
           "price": price,

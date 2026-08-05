@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:store_app/const.dart';
 import 'package:store_app/models/product_model.dart';
 
 class GetProductsByCategory {
@@ -7,11 +8,11 @@ class GetProductsByCategory {
   GetProductsByCategory({required this.dio});
 
   Future<List<ProductModel>> getProductsByCategory({
-    required String category,
+    required String categoryTitle,
   }) async {
     try {
       final response = await dio.get(
-        "https://dummyjson.com/products/category/$category",
+        "$baseUrl/products/category/$categoryTitle",
       );
 
       final List<dynamic> responseData = response.data["products"];
