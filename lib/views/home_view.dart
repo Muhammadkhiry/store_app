@@ -28,12 +28,6 @@ class _HomeViewState extends State<HomeView> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(11),
-            child: Icon(Icons.shopping_cart),
-          ),
-        ],
         title: Text(
           "Store App",
           style: TextStyle(
