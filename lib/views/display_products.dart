@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:store_app/models/product_model.dart';
+import 'package:store_app/views/selected_product_card.dart';
 
 class DisplayProducts extends StatefulWidget {
   const DisplayProducts({super.key, required this.productList});
@@ -38,9 +39,21 @@ class _DisplayProductsState extends State<DisplayProducts> {
             padding: const EdgeInsets.all(11),
             child: GestureDetector(
               onTap: () {
-                setState(() {
-                  selectedProduct = widget.productList[index];
-                });
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SelectedProductCard(
+                        favorite: favorites[index],
+                        onFavoritePressed: () {
+                          setState(() {
+                            favorites[index] = !favorites[index];
+                          });
+                        },
+                        product: widget.productList[index],
+                      );
+                    },
+                  ),
+                );
               },
               child: Stack(
                 clipBehavior: Clip.none,
