@@ -1,5 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:store_app/cubits/product_cubit/product_cubit_states.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/services/add_new_product.dart';
@@ -70,7 +70,11 @@ class ProductCubit extends Cubit<ProductCubitStates> {
       favoriteList.add(product);
     }
 
-    emit(FavoriteUpdatedState(favoriteList: List.from(favoriteList)));
+    emit(LoadedProductsState(productsList: productsList));
+  }
+
+  bool isFavorite(ProductModel product) {
+    return favoriteList.any((item) => item.id == product.id);
   }
 
   void updateProduct({required ProductModel product}) async {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:store_app/cubits/product_cubit/product_cubit.dart';
 import 'package:store_app/models/product_model.dart';
 import 'package:store_app/views/selected_product_card.dart';
 
@@ -11,15 +13,6 @@ class DisplayProducts extends StatefulWidget {
 }
 
 class _DisplayProductsState extends State<DisplayProducts> {
-  late List<bool> favorites;
-  ProductModel? selectedProduct;
-
-  @override
-  void initState() {
-    super.initState();
-
-    favorites = List.generate(widget.productList.length, (_) => false);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,68 +30,71 @@ class _DisplayProductsState extends State<DisplayProducts> {
         itemBuilder: (BuildContext context, int index) {
           return Padding(
             padding: const EdgeInsets.all(11),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return SelectedProductCard(
-                        favorite: favorites[index],
-                        onFavoritePressed: () {
-                          setState(() {
-                            favorites[index] = !favorites[index];
-                          });
-                        },
-                        product: widget.productList[index],
-                      );
-                    },
-                  ),
-                );
-              },
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Card(
-                    color: Colors.white,
-                    elevation: 5,
-                    child: Padding(
-                      padding: const EdgeInsets.all(12),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.productList[index].title,
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("\$${widget.productList[index].price}"),
-                              IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    favorites[index] = !favorites[index];
-                                  });
-                                },
-                                icon: Icon(
-                                  favorites[index]
-                                      ? Icons.favorite
-                                      : Icons.favorite,
-                                  color: favorites[index]
-                                      ? Colors.red
-                                      : Colors.grey,
-                                ),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Card(
+                  color: Colors.white,
+                  elevation: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.productList[index].title,
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("\$${widget.productList[index].price}"),
+                            IconButton(
+                              onPressed: () {
+                                context.read<ProductCubit>().toggleFavorite(
+                                  widget.productList[index],
+                                );
+                              },
+                              icon: Icon(
+                                context.watch<ProductCubit>().isFavorite(
+                                      widget.productList[index],
+                                    )
+                                    ? Icons.favorite
+                                    : Icons.favorite,
+                                color:
+                                    context.watch<ProductCubit>().isFavorite(
+                                      widget.productList[index],
+                                    )
+                                    ? Colors.red
+                                    : Colors.grey,
                               ),
-                            ],
-                          ),
-                        ],
-                      ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
                   ),
-                  Positioned(
-                    left: 55,
-                    bottom: 105,
+                ),
+                Positioned(
+                  left: 55,
+                  bottom: 105,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SelectedProductCard(
+                              favorite: context
+                                  .watch<ProductCubit>()
+                                  .isFavorite(widget.productList[index]),
+                              onFavoritePressed: () {},
+                              product: widget.productList[index],
+                            );
+                          },
+                        ),
+                      );
+                    },
                     child: Image.network(
                       widget.productList[index].image,
                       height: 115,
@@ -112,8 +108,8 @@ class _DisplayProductsState extends State<DisplayProducts> {
                       },
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           );
         },
