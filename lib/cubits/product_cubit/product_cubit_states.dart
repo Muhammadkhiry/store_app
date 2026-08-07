@@ -45,3 +45,6 @@ class FailureState extends ProductCubitStates {
 
   FailureState(this.message);
 }
+class CartUpdatedState extends ProductCubitStates{
+  CartUpdatedState(List<ProductModel> cartList);
+}

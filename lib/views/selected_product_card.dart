@@ -58,7 +58,7 @@ class SelectedProductCard extends StatelessWidget {
                 ],
               ),
               Image.network(
-                product.image,
+                product.thumbnail,
                 fit: BoxFit.contain,
                 loadingBuilder: (context, child, loadingProgress) {
                   if (loadingProgress == null) {
@@ -104,20 +104,28 @@ class SelectedProductCard extends StatelessWidget {
                 "${product.discountPercentage?.toStringAsFixed(2) ?? 0}\$ OFF",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
               ),
-              ListTile(
-                leading: Icon(Icons.inventory),
-                title: Text("Stock"),
-                subtitle: Text("${product.stock ?? "Unknown"}item"),
-              ),
-              ListTile(
-                leading: Icon(Icons.workspaces_filled),
-                title: Text("Brand"),
-                subtitle: Text("${product.brand ?? "Unknown"} "),
-              ),
-              ListTile(
-                leading: Icon(Icons.line_weight),
-                title: Text("Weight"),
-                subtitle: Text("${product.weight ?? "Unknown"}kg"),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    child: ListTile(
+                      title: Text("Stock"),
+                      subtitle: Text("${product.stock ?? "Unknown"} item"),
+                    ),
+                  ),
+                  Expanded(
+                    child: ListTile(
+                      title: Text("Brand"),
+                      subtitle: Text("${product.brand ?? "Unknown"} "),
+                    ),
+                  ),
+                  Expanded(
+                    child: ListTile(
+                      title: Text("Weight"),
+                      subtitle: Text("${product.weight ?? "Unknown"}kg"),
+                    ),
+                  ),
+                ],
               ),
               Text(
                 "dimensions:",

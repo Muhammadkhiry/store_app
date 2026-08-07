@@ -13,7 +13,6 @@ class DisplayProducts extends StatefulWidget {
 }
 
 class _DisplayProductsState extends State<DisplayProducts> {
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,7 +48,22 @@ class _DisplayProductsState extends State<DisplayProducts> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("\$${widget.productList[index].price}"),
+                            Expanded(
+                              child: Text(
+                                "\$${widget.productList[index].price}",
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                context.read<ProductCubit>().toggleCart(
+                                  widget.productList[index],
+                                );
+                              },
+                              icon: Icon(
+                                Icons.add_shopping_cart,
+                                color: Colors.grey,
+                              ),
+                            ),
                             IconButton(
                               onPressed: () {
                                 context.read<ProductCubit>().toggleFavorite(
@@ -96,7 +110,7 @@ class _DisplayProductsState extends State<DisplayProducts> {
                       );
                     },
                     child: Image.network(
-                      widget.productList[index].image,
+                      widget.productList[index].thumbnail,
                       height: 115,
                       width: 125,
                       fit: BoxFit.contain,

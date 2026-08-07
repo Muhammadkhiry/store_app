@@ -15,7 +15,7 @@ class UpdateProduct {
           "title": product.title,
           "price": product.price,
           "description": product.description,
-          "thumbnail": product.image,
+          "thumbnail": product.thumbnail,
           "category": product.category,
         },
       );
