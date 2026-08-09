@@ -3,7 +3,6 @@ import 'package:store_app/views/taps/cart_tap.dart';
 import 'package:store_app/views/taps/favorite_tap.dart';
 import 'package:store_app/views/taps/home_tap.dart';
 import 'package:store_app/views/taps/search_tap.dart';
-import 'package:store_app/views/taps/user_data_tap.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -18,7 +17,6 @@ class _HomeViewState extends State<HomeView> {
     SearchTap(),
     CartTap(),
     FavoriteTap(),
-    UserDataTap(),
   ];
   int _currentPageIndex = 0;
 
@@ -68,11 +66,7 @@ class _HomeViewState extends State<HomeView> {
             selectedIcon: Icon(Icons.favorite_border),
             label: 'Favorite',
           ),
-          NavigationDestination(
-            icon: Icon(Icons.person_pin),
-            selectedIcon: Icon(Icons.person_pin),
-            label: 'User',
-          ),
+          
         ],
       ),
     );

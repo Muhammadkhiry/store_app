@@ -4,19 +4,9 @@ import 'package:store_app/cubits/product_cubit/product_cubit.dart';
 import 'package:store_app/cubits/product_cubit/product_cubit_states.dart';
 import 'package:store_app/views/display_products.dart';
 
-class FavoriteTap extends StatefulWidget {
+
+class FavoriteTap extends StatelessWidget {
   const FavoriteTap({super.key});
-
-  @override
-  State<FavoriteTap> createState() => _FavoriteTapState();
-}
-
-class _FavoriteTapState extends State<FavoriteTap> {
-  @override
-  void initState() {
-    super.initState();
-    context.read<ProductCubit>().getAllFav();
-  }
 
   @override
   Widget build(BuildContext context) {

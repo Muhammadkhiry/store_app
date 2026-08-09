@@ -7,8 +7,10 @@ import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(StoreApp());
+
+  runApp(const StoreApp());
 }
 
 class StoreApp extends StatelessWidget {
@@ -18,6 +20,7 @@ class StoreApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ProductCubit()..getAllProducts(),
+
       child: MaterialApp(
         title: 'Store App',
         debugShowCheckedModeBanner: false,

@@ -13,12 +13,6 @@ class CartTap extends StatefulWidget {
 
 class _CartTapState extends State<CartTap> {
   @override
-  void initState() {
-    super.initState();
-    context.read<ProductCubit>().getAllCart();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductCubit, ProductCubitStates>(
       builder: (context, state) {
