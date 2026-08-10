@@ -45,7 +45,7 @@ The app allows users to browse products, explore categories, view detailed produ
 
   <br><br>
 
-  <img src="assets/screenshots/app_preview.png" width="450">
+  <img src="assets/screenshots/details.png" width="450">
 
 </p>
 ---
