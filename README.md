@@ -8,12 +8,35 @@ The app allows users to browse products, explore categories, view detailed produ
 
 ## 📱 Screenshots
 
-## 📱 Home    /    Search     /    Cart     /      Favorites
 <p align="center">
-  <img src="assets/screenshots/home.png" width="200">
-  <img src="assets/screenshots/searching.png" width="200">
-  <img src="assets/screenshots/favorite.png" width="200">
-  <img src="assets/screenshots/cart.png" width="200">
+
+  <b>🏠 Home</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>🔎 Search</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>❤️ Favorites</b>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>🛒 Cart</b>
+
+  <br><br>
+
+  <img src="assets/screenshots/home.png" width="180">
+  <img src="assets/screenshots/searching.png" width="180">
+  <img src="assets/screenshots/favorite.png" width="180">
+  <img src="assets/screenshots/cart.png" width="180">
+
+</p>
+
+<br>
+
+<p align="center">
+
+  <b>📱 Product Details Preview</b>
+
+  <br><br>
+
+  <img src="assets/screenshots/app_preview.png" width="450">
+
 </p>
 ---
 
