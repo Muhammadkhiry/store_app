@@ -9,45 +9,43 @@ The app allows users to browse products, explore categories, view detailed produ
 
 <p align="center">
 
-  <span>
-    <b>🏠 Home</b><br><br>
-    <img src="assets/screenshots/home.png" width="180">
-  </span>
-
-  &nbsp;&nbsp;&nbsp;&nbsp;
-
-  <span>
-    <b>🔎 Search</b><br><br>
-    <img src="assets/screenshots/searching.png" width="180">
-  </span>
-
-  &nbsp;&nbsp;&nbsp;&nbsp;
-
-  <span>
-    <b>❤️ Favorites</b><br><br>
-    <img src="assets/screenshots/favorite.png" width="180">
-  </span>
-
-  &nbsp;&nbsp;&nbsp;&nbsp;
-
-  <span>
-    <b>🛒 Cart</b><br><br>
-    <img src="assets/screenshots/cart.png" width="180">
-  </span>
+  <b>🏠 Home</b>
+  <br><br>
+  <img src="assets/screenshots/home.png" width="220">
 
 </p>
 
 <br>
 
-<p align="center">
+<table align="center">
+  <tr>
+    <td align="center">
+      <b>🔎 Search</b>
+      <br><br>
+      <img src="assets/screenshots/searching.png" width="200">
+    </td>
 
-  <b>📱 Product Details Preview</b>
+    <td align="center">
+      <b>❤️ Favorites</b>
+      <br><br>
+      <img src="assets/screenshots/favorite.png" width="200">
+    </td>
+  </tr>
 
-  <br><br>
+  <tr>
+    <td align="center">
+      <b>🛒 Cart</b>
+      <br><br>
+      <img src="assets/screenshots/cart.png" width="200">
+    </td>
 
-  <img src="assets/screenshots/details.png" width="180">
-
-</p>
+    <td align="center">
+      <b>📱 Product Details Preview</b>
+      <br><br>
+      <img src="assets/screenshots/app_preview.png" width="200">
+    </td>
+  </tr>
+</table>
 ---
 
 ## ✨ Features
