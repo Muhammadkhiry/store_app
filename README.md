@@ -5,25 +5,35 @@ A modern Flutter E-Commerce application built with **Flutter, Dart, BLoC/Cubit, 
 The app allows users to browse products, explore categories, view detailed product information, search for products, manage favorites, and manage their shopping cart.
 
 ---
-
 ## 📱 Screenshots
 
 <p align="center">
 
-  <b>🏠 Home</b>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>🔎 Search</b>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>❤️ Favorites</b>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <b>🛒 Cart</b>
+  <span>
+    <b>🏠 Home</b><br><br>
+    <img src="assets/screenshots/home.png" width="180">
+  </span>
 
-  <br><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;
 
-  <img src="assets/screenshots/home.png" width="180">
-  <img src="assets/screenshots/searching.png" width="180">
-  <img src="assets/screenshots/favorite.png" width="180">
-  <img src="assets/screenshots/cart.png" width="180">
+  <span>
+    <b>🔎 Search</b><br><br>
+    <img src="assets/screenshots/searching.png" width="180">
+  </span>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <span>
+    <b>❤️ Favorites</b><br><br>
+    <img src="assets/screenshots/favorite.png" width="180">
+  </span>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
+  <span>
+    <b>🛒 Cart</b><br><br>
+    <img src="assets/screenshots/cart.png" width="180">
+  </span>
 
 </p>
 
