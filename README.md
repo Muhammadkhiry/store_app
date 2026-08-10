@@ -8,7 +8,7 @@ The app allows users to browse products, explore categories, view detailed produ
 
 ## 📱 Screenshots
 
-## 📱 Home        Search         Cart           Favorites
+## 📱 Home    /    Search     /    Cart     /      Favorites
 <p align="center">
   <img src="assets/screenshots/home.png" width="200">
   <img src="assets/screenshots/searching.png" width="200">
