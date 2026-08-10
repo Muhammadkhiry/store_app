@@ -28,6 +28,8 @@ The app allows users to browse products, explore categories, view detailed produ
     <img src="assets/screenshots/favorite.png" width="180">
   </span>
 
+  &nbsp;&nbsp;&nbsp;&nbsp;
+
   <span>
     <b>🛒 Cart</b><br><br>
     <img src="assets/screenshots/cart.png" width="180">
@@ -43,7 +45,7 @@ The app allows users to browse products, explore categories, view detailed produ
 
   <br><br>
 
-  <img src="assets/screenshots/details.png" width="450">
+  <img src="assets/screenshots/details.png" width="180">
 
 </p>
 ---
